@@ -13,7 +13,9 @@ sudo pacman -S --needed --noconfirm \
   chezmoi \
   git \
   fastfetch \
-  github-cli
+  github-cli \
+  yay \
+  lazygit
 
 if command -v yay &>/dev/null; then
   echo "Installing AUR packages using yay..."
