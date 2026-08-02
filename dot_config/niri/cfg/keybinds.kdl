@@ -119,8 +119,11 @@ binds {
     // Zen Browser focus or spawn
     Mod+B                               hotkey-overlay-title="Focus or spawn Zen Browser" { spawn "~/scripts/focus-or-spawn.sh" "zen" "zen-browser"; }
 
-    // Zen Browser focus or spawn
+    // Alacritty terminal focus or spawn
     Mod+Return                          hotkey-overlay-title="Focus or spawn terminal" { spawn "~/scripts/focus-or-spawn.sh" "Alacritty" "alacritty"; }
+
+    // TickTick focus or spawn
+    Mod+A                               hotkey-overlay-title="Focus or spawn TickTick" { spawn "~/scripts/focus-or-spawn.sh" "ticktick" "ticktick"; }
 
     // ─── Layout Controls ───
     Mod+F                               { maximize-column; }
