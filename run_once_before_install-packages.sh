@@ -15,7 +15,8 @@ sudo pacman -S --needed --noconfirm \
   fastfetch \
   github-cli \
   yay \
-  lazygit
+  lazygit \
+  mpv
 
 if command -v yay &>/dev/null; then
   echo "Installing AUR packages using yay..."
