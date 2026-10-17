@@ -14,12 +14,14 @@ binds {
 
     // --- Noctalia ---
     XF86Tools                           hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
-    Mod+Shift+Return                    hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Mod+Shift+Semicolon                 hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
     Mod+Comma                           hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "noctalia msg panel-toggle control-center"; }
     Mod+Shift+Comma                     hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "noctalia msg settings-toggle"; }
     Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+Shift+W                         hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; }
     Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; }
+    Mod+N                               hotkey-overlay-title="Toggle notification center" { spawn-sh "noctalia msg panel-toggle control-center notfiications"; }
+    Mod+Shift+N                         hotkey-overlay-title="Clear active notifications" { spawn-sh "noctalia msg notfication-clear-active"; }
 
     // Please choose your own file manager.
     Mod+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn "nautilus"; }
@@ -135,6 +137,7 @@ binds {
 
     // Alacritty terminal focus or spawn
     Mod+Return                          hotkey-overlay-title="Focus or spawn terminal" { spawn "~/scripts/focus-or-spawn.sh" "Alacritty" "alacritty"; }
+    Mod+Shift+Return                    hotkey-overlay-title="Spawn terminal" { spawn "alacritty"; }
 
     // Todoist focus or spawn
     Mod+A                               hotkey-overlay-title="Focus or spawn Todoist" { spawn "~/scripts/focus-or-spawn.sh" "todoist" "todoist"; }
