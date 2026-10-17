@@ -16,13 +16,15 @@ sudo pacman -S --needed --noconfirm \
   github-cli \
   yay \
   lazygit \
-  mpv
+  mpv \
+  fuzzel
 
 if command -v yay &>/dev/null; then
   echo "Installing AUR packages using yay..."
   # Add AUR packages
   # yay -S --needed --noconfirm example-aur-package
-  yay -S --needed --noconfirm ticktick
+  yay -S --needed --noconfirm todoist-appimage
+  yay -S --needed --noconfirm todoist-cli
 else
   echo "yay not found. Skipping AUR step"
 fi
