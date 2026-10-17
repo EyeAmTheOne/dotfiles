@@ -15,8 +15,8 @@ binds {
     // --- Noctalia ---
     XF86Tools                           hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+Shift+Return                    hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
-    Mod+S                               hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "noctalia msg panel-toggle control-center"; }
-    Mod+Shift+S                         hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "noctalia msg settings-toggle"; }
+    Mod+Comma                           hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Shift+Comma                     hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "noctalia msg settings-toggle"; }
     Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+Shift+W                         hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; }
     Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; }
@@ -155,14 +155,17 @@ binds {
     Mod+W                               { toggle-column-tabbed-display; }
 
     // ─── Screenshots ───
-    CTRL+Shift+1                        { screenshot; }
-    CTRL+Shift+2                        { screenshot-screen; }
-    CTRL+Shift+3                        { screenshot-window; }
+    Mod+S                               { screenshot; }
+    Mod+Shift+S                         { screenshot-screen; }
+    Mod+Ctrl+S                          { screenshot-window; }
 
     // ─── Emergency Escape Key ───
     // Use this when a fullscreen app blocks your keybinds.
     // It disables any active keyboard shortcut inhibitor, restoring control.
     Mod+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // ─── Todoist Quickadd ───
+    Mod+Shift+T                         { spawn-sh "$HOME/.local/bin/todoist-quickadd.sh"; }
 
     // ─── Exit / Power ───
     CTRL+ALT+Delete                     { quit; } // Also quits Niri
