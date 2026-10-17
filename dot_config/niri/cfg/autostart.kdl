@@ -3,3 +3,4 @@
 
     spawn-at-startup "noctalia"
     spawn-at-startup "fcitx5" "-d"
+    spawn-at-startup "alacritty"
