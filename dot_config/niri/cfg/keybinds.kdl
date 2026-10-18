@@ -143,6 +143,9 @@ binds {
     // Todoist focus or spawn
     Mod+A                               hotkey-overlay-title="Focus or spawn Todoist" { spawn "~/scripts/focus-or-spawn.sh" "todoist" "todoist"; }
 
+    // Discord focus or spawn
+    Mod+D                               hotkey-overlay-title="Focus or spawn Discord" { spawn "~/scripts/focus-or-spawn.sh" "discord" "discord"; }
+
     // ─── Layout Controls ───
     Mod+F                               { maximize-column; }
     Mod+C                               { center-column; }
