@@ -118,6 +118,7 @@ radius = 3
 numlock_toggle = true
 
 [input.cursor]
+follows_focus = true
 hide_when_typing = true
 
 # Focus can follow the pointer across tiled, floating, and pinned windows.
