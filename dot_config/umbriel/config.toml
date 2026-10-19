@@ -13,10 +13,10 @@
 # Optional split configuration
 # https://docs.noctalia.dev/umbriel/configuration/#include
 [include]
-files = ["noctalia.toml"]
+files = []
 
 [include.optional]
-files = []
+files = ["noctalia.toml"]
 
 # ==============================================================================
 # General
@@ -117,6 +117,9 @@ radius = 3
 [input.keyboard]
 numlock_toggle = true
 
+[input.cursor]
+hide_when_typing = true
+
 # Focus can follow the pointer across tiled, floating, and pinned windows.
 #
 # [input.focus]
@@ -191,8 +194,8 @@ numlock_toggle = true
 "Mod+F" = { action = "window-toggle-maximize", repeat = false }
 "Mod+R" = "window-cycle-primary-extent"
 "Mod+Shift+R" = "window-cycle-primary-extent-back"
-"Mod+Comma" = "window-consume-left"
-"Mod+Period" = "window-consume-right"
+"Mod+Comma" = "window-consume-or-expel-left"
+"Mod+Period" = "window-consume-or-expel-right"
 "Mod+Ctrl+Comma" = "window-consume-from-left"
 "Mod+Ctrl+Period" = "window-consume-from-right"
 # Needs layout.mode = "dwindle".
@@ -245,20 +248,25 @@ numlock_toggle = true
 "Mod+Ctrl+Return" = { action = "window-move-to-scratchpad:terminal", repeat = false }
 "Mod+Return" = "scratchpad-toggle:terminal"
 "Mod+Shift+Return" = { action = "window-restore-from-scratchpad:terminal", repeat = false }
-"Mod+Tab" = "scratchpad-focus-next:terminal"
-"Mod+Grave" = "window-focus-last"
+"Mod+Grave" = "scratchpad-focus-next:terminal"
 
 # Obsidian Scratchpad
-"Mod+Ctrl+O" = { action = "window-move-to-scratchpad:obsidian", repeat = false }
-"Mod+O" = "scratchpad-toggle:obsidian"
-"Mod+Shift+O" = { action = "window-restore-from-scratchpad:obsidian", repeat = false }
+# "Mod+Ctrl+O" = { action = "window-move-to-scratchpad:obsidian", repeat = false }
+# "Mod+O" = "scratchpad-toggle:obsidian"
+# "Mod+Shift+O" = { action = "window-restore-from-scratchpad:obsidian", repeat = false }
+"Mod+O" = { action = "spawn:~/.local/bin/umbriel-focus-or-spawn.sh md.obsidian.Obsidian obsidian"}
+
+# Browser
+"Mod+B" = { action = "spawn:~/.local/bin/umbriel-focus-or-spawn.sh zen zen-browser"}
 
 # Todo Scratchpad
 "Mod+Ctrl+A" = { action = "window-move-to-scratchpad:todo", repeat = false }
 "Mod+A" = "scratchpad-toggle:todo"
 "Mod+Shift+A" = { action = "window-restore-from-scratchpad:todo", repeat = false }
 
-# "Mod+Tab" = "scratchpad-focus-next:obsidian"
+# Noctalia Switcher
+"Alt+Tab" = { action = "spawn:noctalia msg window-switcher hold", repeat = false }
+"Mod+Tab" = "window-focus-last"
 
 [[scratchpad]]
 name = "terminal"
@@ -268,11 +276,11 @@ spawn_when_empty = "alacritty --class scratchpad_terminal"
 name = "todo"
 spawn_when_empty = "todoist"
 
-[[scratchpad]]
-name = "obsidian"
+# [[scratchpad]]
+# name = "obsidian"
 
-[[scratchpad]]
-name = "browser"
+# [[scratchpad]]
+# name = "browser"
 
 # ==============================================================================
 # Layout
@@ -388,6 +396,7 @@ confine_pointer = true
 # border_width = 0
 # corner_radius = 0
 # shadow = false
+#
 
 # ==============================================================================
 # Layer rules
