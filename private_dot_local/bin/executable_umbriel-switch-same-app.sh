@@ -27,4 +27,4 @@ fi
 NEXT_INDEX=$(((ACTIVE_INDEX + 1) % ${#MATCHING_IDS[@]}))
 TARGET_ID="${MATCHING_IDS[$NEXT_INDEX]}"
 
-umbriel msg "window-focus:$TARGET_ID"
+umbriel msg "window-focus-warp:$TARGET_ID"
