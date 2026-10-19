@@ -138,7 +138,6 @@ hide_when_typing = true
 # Syntax: https://docs.noctalia.dev/umbriel/keybinds/
 # Actions: https://docs.noctalia.dev/umbriel/actions/
 [keybinds]
-
 # Todoist quickadd
 "Mod+Alt+A" = "spawn:~/.local/bin/todoist-quickadd.sh"
 
@@ -235,6 +234,9 @@ hide_when_typing = true
 "Mod+Alt+Shift+H" = "workspace-swap-active-output-left"
 "Mod+Alt+Shift+L" = "workspace-swap-active-output-right"
 
+"Mod+E" = "workspace-switch:editing/DP-2"
+"Mod+Shift+E" = "window-move-to-workspace:editing/DP-2"
+
 # System
 "Mod+Slash" = "cheatsheet-toggle"
 
@@ -267,6 +269,10 @@ hide_when_typing = true
 # Noctalia Switcher
 "Alt+Tab" = { action = "spawn:noctalia msg window-switcher hold", repeat = false }
 "Mod+Tab" = "window-focus-last"
+
+[[workspace]]
+name = "editing"
+output = "DP-2"
 
 [[scratchpad]]
 name = "terminal"
@@ -342,6 +348,13 @@ default_floating_size = { width = 0.95, height = 0.95 }
 match.app_id = "^todoist$"
 default_scratchpad = "todo"
 default_floating_size = { width = 0.95, height = 0.95 }
+
+# Make Obsidian automatically open on left monitor in the first workspace, maximized
+[[window_rule]]
+match.app_id = "^md.obsidian.Obsidian$"
+default_output = "DP-2"
+default_workspace = 1
+default_maximize = true
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
