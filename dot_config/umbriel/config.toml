@@ -171,6 +171,8 @@ hide_when_typing = true
 "Mod+L" = "window-focus-or-output-right"
 "Mod+F1" = "window-focus-next"
 
+"Mod+E" = { action = "spawn:~/.local/bin/umbriel-focus-nvim.sh", repeat = false }
+
 # Movement
 "Mod+Ctrl+Left" = "column-move-left"
 "Mod+Ctrl+Down" = "window-move-down"
@@ -234,9 +236,6 @@ hide_when_typing = true
 "Mod+Alt+Shift+H" = "workspace-swap-active-output-left"
 "Mod+Alt+Shift+L" = "workspace-swap-active-output-right"
 
-"Mod+E" = "workspace-switch:editing/DP-2"
-"Mod+Shift+E" = "window-move-to-workspace:editing/DP-2"
-
 # System
 "Mod+Slash" = "cheatsheet-toggle"
 
@@ -268,11 +267,11 @@ hide_when_typing = true
 
 # Noctalia Switcher
 "Alt+Tab" = { action = "spawn:noctalia msg window-switcher hold", repeat = false }
+"Alt+Grave" = { action = "spawn:~/.local/bin/umbriel-switch-same-app.sh", repeat = false } 
 "Mod+Tab" = "window-focus-last"
 
-[[workspace]]
-name = "editing"
-output = "DP-2"
+[workspaces]
+back_and_forth = true
 
 [[scratchpad]]
 name = "terminal"
