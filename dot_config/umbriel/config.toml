@@ -160,12 +160,11 @@ hide_when_typing = true
 "XF86AudioPrev" = { action = "spawn:noctalia msg media previous", allow_when_locked = true }
 "XF86MonBrightnessUp" = { action = "spawn:noctalia msg brightness-up", allow_when_locked = true }
 "XF86MonBrightnessDown" = { action = "spawn:noctalia msg brightness-down", allow_when_locked = true }
+"Mod+Semicolon" = { action = "spawn:noctalia msg panel-toggle control-center", repeat = false }
+"Mod+N" = { action = "spawn:noctalia msg notifications-clear-active", repeat = false }
+"Mod+Shift+N" = { action = "spawn:noctalia msg notifications-clear-history", repeat = false }
 
 # Focus
-"Mod+Left" = "window-focus-left"
-"Mod+Down" = "window-focus-down"
-"Mod+Up" = "window-focus-up"
-"Mod+Right" = "window-focus-right"
 "Mod+H" = "window-focus-or-output-left"
 "Mod+J" = "window-focus-or-workspace-down"
 "Mod+K" = "window-focus-or-workspace-up"
@@ -187,6 +186,19 @@ hide_when_typing = true
 "Mod+Alt+H" = "output-focus-left"
 "Mod+Alt+L" = "output-focus-right"
 
+"Mod+Left" = "window-modify-primary-extent:-0.1"
+"Mod+Down" = "window-modify-secondary-extent:-0.1"
+"Mod+Up" = "window-modify-secondary-extent:0.1"
+"Mod+Right" = "window-modify-primary-extent:0.1"
+
+"Mod+Alt+Left" = "window-move-by:-50/0"
+"Mod+Alt+Down" = "window-move-by:0/50"
+"Mod+Alt+Up" = "window-move-by:0/-50"
+"Mod+Alt+Right" = "window-move-by:50/0"
+
+"Mod+Alt+Return" = "column-center"
+"Mod+Alt+Space" = "window-center"
+
 # Window state and layout
 "Mod+T" = { action = "window-toggle-floating", repeat = false }
 "Mod+Shift+T" = { action = "window-focus-switch-floating", repeat = false }
@@ -203,8 +215,8 @@ hide_when_typing = true
 # Needs layout.mode = "dwindle".
 # "Mod+Alt+T" = "layout-toggle-split"
 "Mod+W" = { action = "column-toggle-tabbed", repeat = false }
-"Mod+Alt+Right" = "column-focus-tab-next"
-"Mod+Alt+Left" = "column-focus-tab-previous"
+"Mod+Bracketright" = "column-focus-tab-next"
+"Mod+Bracketleft" = "column-focus-tab-previous"
 "Mod+WheelUp" = "window-focus-left"
 "Mod+WheelDown" = "window-focus-right"
 "Mod+Space" = { action = "overview-toggle", repeat = false }
@@ -342,12 +354,12 @@ default_maximize = true
 [[window_rule]]
 match.app_id = "^scratchpad_terminal$"
 default_scratchpad = "terminal"
-default_floating_size = { width = 0.95, height = 0.95 }
+default_floating_size = { width = 0.98, height = 0.98 }
 
 [[window_rule]]
 match.app_id = "^todoist$"
 default_scratchpad = "todo"
-default_floating_size = { width = 0.95, height = 0.95 }
+default_floating_size = { width = 0.98, height = 0.98 }
 
 # Make Obsidian automatically open on left monitor in the first workspace, maximized
 [[window_rule]]
