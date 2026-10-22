@@ -25,6 +25,7 @@ if command -v yay &>/dev/null; then
   # yay -S --needed --noconfirm example-aur-package
   yay -S --needed --noconfirm todoist-appimage
   yay -S --needed --noconfirm todoist-cli
+  yay -S --needed --noconfirm zed
 else
   echo "yay not found. Skipping AUR step"
 fi
