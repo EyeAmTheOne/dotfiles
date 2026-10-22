@@ -6,10 +6,10 @@ map b adjust-window-to-best-fit
 map [normal] <C-d> scroll half-down
 map [normal] <C-u> scroll half-up
 
-map <C-b> feedkeys ":bmark "
+map <M-b> feedkeys ":bmark "
 
-map <C-l> feedkeys ":blist "
-map <C-j> focus_inputbar ":bjump "
-map <C-i> focus_inputbar ":bdelete "
+map <M-l> feedkeys ":blist "
+map <M-j> focus_inputbar ":bjump "
+map <M-d> focus_inputbar ":bdelete "
 
 

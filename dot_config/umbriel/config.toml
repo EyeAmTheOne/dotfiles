@@ -160,18 +160,18 @@ hide_when_typing = true
 "XF86AudioPrev" = { action = "spawn:noctalia msg media previous", allow_when_locked = true }
 "XF86MonBrightnessUp" = { action = "spawn:noctalia msg brightness-up", allow_when_locked = true }
 "XF86MonBrightnessDown" = { action = "spawn:noctalia msg brightness-down", allow_when_locked = true }
-"Mod+Semicolon" = { action = "spawn:noctalia msg panel-toggle control-center", repeat = false }
-"Mod+N" = { action = "spawn:noctalia msg notifications-clear-active", repeat = false }
-"Mod+Shift+N" = { action = "spawn:noctalia msg notifications-clear-history", repeat = false }
+"Mod+C" = { action = "spawn:noctalia msg panel-toggle control-center", repeat = false }
+"Mod+N" = { action = "spawn:noctalia msg notification-clear-active", repeat = false }
+"Mod+Alt+N" = { action = "spawn:noctalia msg panel-toggle control-center notifications", repeat = false }
+"Mod+Shift+N" = { action = "spawn:noctalia msg notification-clear-history", repeat = false }
+"Mod+Alt+Comma" = { action = "spawn:noctalia msg settings-toggle", repeat = false }
 
 # Focus
-"Mod+H" = "window-focus-or-output-left"
+"Mod+H" = "window-focus-left"
 "Mod+J" = "window-focus-or-workspace-down"
 "Mod+K" = "window-focus-or-workspace-up"
-"Mod+L" = "window-focus-or-output-right"
+"Mod+L" = "window-focus-right"
 "Mod+F1" = "window-focus-next"
-
-"Mod+E" = { action = "spawn:~/.local/bin/umbriel-focus-nvim.sh", repeat = false }
 
 # Movement
 "Mod+Ctrl+Left" = "column-move-left"
@@ -182,9 +182,13 @@ hide_when_typing = true
 "Mod+Ctrl+J" = "window-move-or-workspace-down"
 "Mod+Ctrl+K" = "window-move-or-workspace-up"
 "Mod+Ctrl+L" = "window-move-or-output-right"
+"Mod+Shift+Period" = "window-swap-right"
+"Mod+Shift+Comma" = "window-swap-left"
 
 "Mod+Alt+H" = "output-focus-left"
 "Mod+Alt+L" = "output-focus-right"
+"Mod+Ctrl+Alt+H" = "window-move-to-output-left"
+"Mod+Ctrl+Alt+L" = "window-move-to-output-right"
 
 "Mod+Left" = "window-modify-primary-extent:-0.1"
 "Mod+Down" = "window-modify-secondary-extent:-0.1"
@@ -220,6 +224,7 @@ hide_when_typing = true
 "Mod+WheelUp" = "window-focus-left"
 "Mod+WheelDown" = "window-focus-right"
 "Mod+Space" = { action = "overview-toggle", repeat = false }
+"Mod+Alt+Semicolon" = { action = "workspace-set-layout:toggle:scrolling,dwindle,master", repeat = false }
 
 # Workspaces
 "Mod+1" = "workspace-switch:1"
@@ -231,15 +236,15 @@ hide_when_typing = true
 "Mod+7" = "workspace-switch:7"
 "Mod+8" = "workspace-switch:8"
 "Mod+9" = "workspace-switch:9"
-"Mod+Shift+1" = "window-move-to-workspace:1"
-"Mod+Shift+2" = "window-move-to-workspace:2"
-"Mod+Shift+3" = "window-move-to-workspace:3"
-"Mod+Shift+4" = "window-move-to-workspace:4"
-"Mod+Shift+5" = "window-move-to-workspace:5"
-"Mod+Shift+6" = "window-move-to-workspace:6"
-"Mod+Shift+7" = "window-move-to-workspace:7"
-"Mod+Shift+8" = "window-move-to-workspace:8"
-"Mod+Shift+9" = "window-move-to-workspace:9"
+"Mod+Ctrl+1" = "window-move-to-workspace:1"
+"Mod+Ctrl+2" = "window-move-to-workspace:2"
+"Mod+Ctrl+3" = "window-move-to-workspace:3"
+"Mod+Ctrl+4" = "window-move-to-workspace:4"
+"Mod+Ctrl+5" = "window-move-to-workspace:5"
+"Mod+Ctrl+6" = "window-move-to-workspace:6"
+"Mod+Ctrl+7" = "window-move-to-workspace:7"
+"Mod+Ctrl+8" = "window-move-to-workspace:8"
+"Mod+Ctrl+9" = "window-move-to-workspace:9"
 
 "Mod+Shift+H" = "workspace-move-to-output-left"
 "Mod+Shift+J" = "workspace-move-down"
@@ -252,6 +257,10 @@ hide_when_typing = true
 # System
 "Mod+Slash" = "cheatsheet-toggle"
 
+# Screenshots
+"Mod+S" = { action = "spawn:noctalia msg screenshot-region", repeat = false }
+"Mod+Shift+S" = { action = "spawn:noctalia msg screenshot", repeat = false }
+
 # Scratchpad
 # "Mod+Shift+Space" = { action = "window-move-to-scratchpad", repeat = false }
 # "Mod+Space" = "scratchpad-toggle"
@@ -259,19 +268,16 @@ hide_when_typing = true
 # "Mod+Tab" = "scratchpad-focus-next"
 
 # Terminal Scratchpad
-"Mod+Ctrl+Return" = { action = "window-move-to-scratchpad:terminal", repeat = false }
+"Mod+Ctrl+Return" = { action = "window-toggle-scratchpad:terminal", repeat = false }
 "Mod+Return" = "scratchpad-toggle:terminal"
-"Mod+Shift+Return" = { action = "window-restore-from-scratchpad:terminal", repeat = false }
+"Mod+Shift+Return" = { action = "scratchpad-window-show-next:terminal", repeat = false }
 "Mod+Grave" = "scratchpad-focus-next:terminal"
 
-# Obsidian Scratchpad
-# "Mod+Ctrl+O" = { action = "window-move-to-scratchpad:obsidian", repeat = false }
-# "Mod+O" = "scratchpad-toggle:obsidian"
-# "Mod+Shift+O" = { action = "window-restore-from-scratchpad:obsidian", repeat = false }
+# Focus or spawn specific apps
 "Mod+O" = { action = "spawn:~/.local/bin/umbriel-focus-or-spawn.sh md.obsidian.Obsidian obsidian"}
-
-# Browser
 "Mod+B" = { action = "spawn:~/.local/bin/umbriel-focus-or-spawn.sh zen zen-browser"}
+"Mod+E" = { action = "spawn:~/.local/bin/umbriel-focus-or-spawn.sh dev.zed.Zed zeditor"}
+"Mod+Z" = "spawn:alacritty"
 
 # Todo Scratchpad
 "Mod+Ctrl+A" = { action = "window-move-to-scratchpad:todo", repeat = false }
@@ -280,8 +286,9 @@ hide_when_typing = true
 
 # Noctalia Switcher
 "Alt+Tab" = { action = "spawn:noctalia msg window-switcher hold", repeat = false }
-"Alt+Grave" = { action = "spawn:~/.local/bin/umbriel-switch-same-app.sh", repeat = false } 
-"Mod+Tab" = "window-focus-last"
+"Mod+Tab" = { action = "spawn:noctalia msg window-switcher hold current", repeat = false }
+"Alt+Grave" = { action = "spawn:~/.local/bin/umbriel-switch-same-app.sh", repeat = false }
+"Mod+Semicolon" = "window-focus-last"
 
 [workspaces]
 back_and_forth = true
@@ -293,12 +300,6 @@ spawn_when_empty = "alacritty --class scratchpad_terminal"
 [[scratchpad]]
 name = "todo"
 spawn_when_empty = "todoist"
-
-# [[scratchpad]]
-# name = "obsidian"
-
-# [[scratchpad]]
-# name = "browser"
 
 # ==============================================================================
 # Layout
@@ -316,6 +317,7 @@ extent_presets = [0.333, 0.5, 0.667]
 
 [layout.scrolling]
 default_extent_fraction = 0.5
+center_focused = "never"
 
 # A tab group shows one window at a time below a bar of titles, and stacks and
 # resizes like any row of its column. Mod+W tabs the focused window with the
