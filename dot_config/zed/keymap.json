@@ -1,0 +1,89 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "(Editor && vim_mode == normal && !menu) || (ProjectPanel && !editiing) || (GitPanel)",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+    },
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "space l f": "editor::Format",
+      "space f f": "file_finder::Toggle",
+      "space f g": "pane::DeploySearch",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "L": "pane::ActivateNextItem",
+      "H": "pane::ActivatePreviousItem",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      "ctrl-/": "workspace::ToggleBottomDock",
+      "space p": "editor::Format",
+      "space v": "pane::SplitRight",
+      "space w": "pane::CloseActiveItem",
+      "space h": "workspace::ActivateNextPane",
+      "space l": "workspace::ActivatePreviousPane",
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-/": "workspace::ToggleBottomDock",
+    },
+  },
+  {
+    "context": "(Editor && vim_mode == normal && vim_operator == none && !VimWaiting) || ProjectPanel || Workspace",
+    "bindings": {
+      "space ctrl-o": "workspace::Open",
+      "space o": "projects::OpenRecent",
+    },
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "space g g": "workspace::ToggleRightDock",
+      "space g b": "git::Blame",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "escape": "workspace::ToggleRightDock",
+    },
+  },
+]
