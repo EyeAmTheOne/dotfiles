@@ -58,13 +58,16 @@ autostart = ["noctalia", "alacritty"]
 # Outputs are machine-specific. Run `umbriel outputs` to find names and modes.
 # https://docs.noctalia.dev/umbriel/outputs/
 #
-# [output.DP-1]
-# mode = "2560x1440@144"
+[output.DP-3]
+mode = "2560x1440@240"
 # position = [0, 0]
 # scale = 1.25
 # vrr = "fullscreen"
 # hdr = "auto"
 # sdr_transfer = "gamma22" # Or "srgb" for piecewise SDR decoding in HDR.
+[output.DP-2]
+# mode = "2560x1440@240"
+position = [0, 0]
 
 # ==============================================================================
 # Appearance
@@ -77,7 +80,8 @@ radius = 3
 # Choose the background color shown if the lock screen takes too long to appear.
 # [colors]
 # backdrop = "#000000FF"
-
+[colors.overview]
+workspace_background = "#00000000"
 # ==============================================================================
 # Effects
 # Every effect is off until a preset is selected; border and window effects
@@ -126,6 +130,7 @@ hide_when_typing = true
 # [input.focus]
 # follows_mouse = true
 
+
 # Confine touch input to one display.
 #
 # [input.touch]
@@ -165,6 +170,7 @@ hide_when_typing = true
 "Mod+Alt+N" = { action = "spawn:noctalia msg panel-toggle control-center notifications", repeat = false }
 "Mod+Shift+N" = { action = "spawn:noctalia msg notification-clear-history", repeat = false }
 "Mod+Alt+Comma" = { action = "spawn:noctalia msg settings-toggle", repeat = false }
+"Mod+Alt+Period" = { action = "spawn:noctalia msg panel-toggle noctalia/timer:panel", repeat = false }
 
 # Focus
 "Mod+H" = "window-focus-left"
@@ -274,9 +280,9 @@ hide_when_typing = true
 "Mod+Grave" = "scratchpad-focus-next:terminal"
 
 # Focus or spawn specific apps
-"Mod+O" = { action = "spawn:~/.local/bin/umbriel-focus-or-spawn.sh md.obsidian.Obsidian obsidian"}
-"Mod+B" = { action = "spawn:~/.local/bin/umbriel-focus-or-spawn.sh zen zen-browser"}
-"Mod+E" = { action = "spawn:~/.local/bin/umbriel-focus-or-spawn.sh dev.zed.Zed zeditor"}
+"Mod+O" = { action = "spawn:~/.local/bin/umbriel-focus-or-spawn.sh md.obsidian.Obsidian obsidian" }
+"Mod+B" = { action = "spawn:~/.local/bin/umbriel-focus-or-spawn.sh zen zen-browser" }
+"Mod+E" = { action = "spawn:~/.local/bin/umbriel-focus-or-spawn.sh dev.zed.Zed zeditor" }
 "Mod+Z" = "spawn:alacritty"
 
 # Todo Scratchpad
@@ -363,6 +369,14 @@ match.app_id = "^todoist$"
 default_scratchpad = "todo"
 default_floating_size = { width = 0.98, height = 0.98 }
 
+# Make startup terminal open on right screen
+[[window_rule]]
+match.at_startup = true
+match.app_id = "^Alacritty$"
+default_output = "DP-3"
+default_workspace = 1
+default_maximize = true
+
 # Make Obsidian automatically open on left monitor in the first workspace, maximized
 [[window_rule]]
 match.app_id = "^md.obsidian.Obsidian$"
@@ -447,6 +461,11 @@ blur_optimized = false
 # the overview after a short delay.
 # Overview: https://docs.noctalia.dev/umbriel/workspaces-overview/
 # Animation: https://docs.noctalia.dev/umbriel/animation/
+[overview]
+shortcut_keys = "hjkl;asdf"
+zoom = 0.35
+workspace_wallpaper = false
+
 [hot_corners.top_left]
 enabled = true
 delay_ms = 500
